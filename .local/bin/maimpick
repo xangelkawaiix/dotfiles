@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+case "$(printf "a selected area\\ncurrent window\\nfull screen\\na selected area (copy)\\ncurrent window (copy)\\nfull screen (copy)" | dmenu -l 6 -i -p "Screenshot which area?")" in
+	"a selected area") maim -s ~/Screenshot/pic-selected-"$(date '+%Y-%m-%d-%H-%M-%S').png" && notify-send "Saved selected screenshot as $(date '+%Y-%m-%d-%H-%M-%S').png" ;;
+	"current window") maim -i "$(xdotool getactivewindow)" ~/Screenshot/pic-window-"$(date '+%Y-%m-%d-%H-%M-%S').png" && notify-send "Saved current window screenshot as $(date '+%Y-%m-%d-%H-%M-%S').png" ;;
+	"full screen") maim ~/Screenshot/pic-full-"$(date '+%Y-%m-%d-%H-%M-%S').png" && notify-send "Saved screenshot as $(date '+%Y-%m-%d-%H-%M-%S').png";;
+	"a selected area (copy)") maim -s | xclip -selection clipboard -t image/png && notify-send "Copied selected area to clipboard" ;;
+	"current window (copy)") maim -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png && notify-send "Copied current window to clipboard" ;;
+	"full screen (copy)") maim | xclip -selection clipboard -t image/png && notify-send "Copied current screen to clipboard" ;;
+esac

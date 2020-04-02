@@ -1,0 +1,7 @@
+configuration {
+ modi: "window,drun,combi";
+ font: "Cantarell 10";
+ combi-modi: "window,drun";
+ }
+
+@import "/usr/share/rofi/themes/slate.rasi"

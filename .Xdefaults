@@ -1,0 +1,84 @@
+URxvt*background: #30343F
+URxvt*foreground: #F9F1E8
+URxvt*cursorColor: #F9F1E8
+
+*color0: #4C4C5B
+*color1: #91BEBB
+*color2: #D38AB3
+*color3: #F4ACB8
+*color4: #FDB1BE
+*color5: #B0D6D7
+*color6: #D3E9E7
+*color7: #F9F1E8
+*color8: #999999
+*color9: #91BEBB
+*color10: #D38AB3
+*color11: #F4ACB8
+*color12: #FDB1BE
+*color13: #B0D6D7
+*color14: #D3E9E7
+*color15: #F9F1E8
+*color66: #4C4C5B
+
+
+URxvt*font:             xft:DejaVu Sans Mono for Powerline:pixelsize=14,xft:Meiryo UI,xft:Iosevka Nerd Font:antialias=true:hinting=true
+URxvt*internalBorder:   12
+URxvt*scrollBar:        false
+URxvt*geometry:         75x20
+
+!! Common Keybinds for Navigations
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+URxvt.keysym.Control-Right: \033[1;5C
+URxvt.keysym.Control-Left: \033[1;5D
+
+!! Copy Paste & Other Extensions
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: firefox
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+
+!!! XTERM !!!
+
+XTerm*background: #30343F
+XTerm*foreground: #F9F1E8
+XTerm*cursorColor: #F9F1E8
+
+*.color0: #4C4C5B
+*.color1: #91BEBB
+*.color2: #D38AB3
+*.color3: #F4ACB8
+*.color4: #FDB1BE
+*.color5: #B0D6D7
+*.color6: #D3E9E7
+*.color7: #F9F1E8
+*.color8: #999999
+*.color9: #91BEBB
+*.color10: #D38AB3
+*.color11: #F4ACB8
+*.color12: #FDB1BE
+*.color13: #B0D6D7
+*.color14: #D3E9E7
+*.color15: #F9F1E8
+*.color66: #4C4C5B
+
+XTerm*font:             xft:Iosevka Nerd Font:pixelsize=15:antialias=true:hinting=true
+XTerm*internalBorder:   12
+XTerm*scrollBar:        false
+XTerm*geometry:         75x20
+
+!!! Other
+
+*inputMethod:           uim
+*preeditType:           OverTheSpot
+*cursorColor:           #ffc49f

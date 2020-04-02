@@ -1,0 +1,52 @@
+#!/usr/bin/env sh
+
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
+
+alias \
+        ka="killall" \
+        ku="ka -u $USER" \
+	yt="youtube-dl -f 'best[ext=mp4,height<=720]+bestaudio[ext=flac]/best[height<=720]+bestaudio' --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
+	yta="yt -x -f bestaudio[ext=flac]/best" \
+	ffmpeg="ffmpeg -hide_banner" \
+	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" # It enables the `pauseallmpv` command
+
+alias \
+	mv="mv -iv" \
+	mkd="mkdir -pv" \
+	cp="cp -iv" \
+        rm="rm -v" \
+	f="$FILE" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	trem="transmission-remote" \
+	x="sxiv -ft *" \
+	sdn="sudo shutdown -h now"
+
+# Abbrev. common command
+alias \
+	YT="youtube-viewer" \
+        gallery-dl="gallery-dl -d $HOME/Pictures/gallery-dl/" \
+        tmux="tmux -f $XDG_CONFIG_HOME/.config/tmux.conf" \
+        weechat="weechat -d $XDG_CONFIG_HOME/weechat" \
+        mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc" \
+        abook="abook --config $XDG_CONFIG_HOME/abook/abookrc --datafile $XDG_CACHE_HOME/abook/addressbook" \
+        calcurse="calcurse -C $XDG_CONFIG_HOME/calcurse -D $XDG_DATA_HOME/calcurse" \
+        dosbox="dosbox -conf $XDG_CONFIG_HOME/dosbox/dosbox.conf" \
+        irssi="irssi --config=$XDG_CONFIG_HOME/irssi/config --home=$XDG_DATA_HOME/irssi"
+
+# Colorize commmand when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	ccat="highlight --out-format=ansi" \
+	lsp="pacman -Qett --color=always | less" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto"
+
+# Some other stuffs
+alias \
+        magit="nvim -c MagitOnly" \
+	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
+
+
+vf() { fzf | xargs -r -I % $EDITOR % ;}
+fh() { eval $(history | fzf +s --tac | sed 's/ *[0-9]* *//') ;}

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if pgrep -x polybar >/dev/null ;
+then
+	killall polybar
+else
+	ifinstalled polybar || exit
+	poly-launch
+fi
+
