@@ -1,0 +1,42 @@
+#show-read-feeds no
+auto-reload yes
+
+external-url-viewer "urlscan -dc -r 'linkhandler {}'"
+
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+bind-key ^t next-unread
+
+color listnormal cyan default
+color listfocus black yellow standout bold
+color listnormal_unread blue default
+color listfocus_unread yellow default bold
+color info red black bold
+color article cyan default
+
+browser linkhandler
+macro , open-in-browser
+macro t set browser "tsp youtube-dl  --add-metadata -ic -f 'best[ext=mp4,<height<=?720]+bestaudio[ext=flac]/best[height<=?720]+bestaudio' -o '%(upload_date)s-%(title)s.%(ext)s'"; open-in-browser ; set browser linkhandler
+macro a set browser "tsp youtube-dl --add-metadata -xic -f bestaudio[ext=flac]/best"; open-in-browser ; set browser linkhandler
+macro v set browser "setsid nohup mpv"; open-in-browser ; set browser linkhandler
+macro d set browser "dmenuhandler"; open-in-browser ; set browser linkhandler
+macro c set browser "xsel -b <<<" ; open-in-browser ; set browser linkhandler
+macro r set browser "rtv -l %u"; open-in-browser ; set browser "$BROWSER %u" # Read reddit comments with rtv
+macro o set browser "$BROWSERCLI %u"; open-in-browser ; set browser "$BROWSER %u" # Open in cli browser
+macro p set browser "tsp mpv --ontop --no-border --force-window --autofit=500x280 --geometry=-15-10 %u"; open-in-browser ; set browser "$BROWSER %u" # add video/audio to play queue using mpv (requires: task-spooler, mpv, youtube-dl)

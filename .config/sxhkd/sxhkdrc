@@ -1,0 +1,151 @@
+# Basic binds
+super + Return
+	$TERMINAL
+super + shift + Return
+	$TERMINAL -e tmux
+super + d
+	dmenu_run
+super + f
+	rofi -show window
+super + r
+	$TERMINAL -e $FILE
+super + e
+	$TERMINAL -e neomutt
+super + m
+	$TERMINAL -e ncmpcpp
+super + shift + m
+	pulsemixer --toggle-mute
+super + n
+	$TERMINAL -e newsboat
+super + i
+	$TERMINAL -e htop
+super + y
+	$TERMINAL -e calcurse -D ~/.config/calcurse
+super + shift + a
+	$TERMINAL -e pulsemixer || alsamixer
+super + shift + c
+	camtoggle
+super + shift + e
+	rofi-pass
+super +  w
+	$TERMINAL -e sudo nmtui
+super + shift + w
+	$BROWSER
+super + shift + g
+	gimp
+
+# Et cetera...
+super + grave
+	dmenuunicode
+super + Scroll_Lock
+	killall screenkey || screenkey
+super + Insert
+	showclip
+super + shift + x
+	prompt "Shutdown computer?" "sudo -A shutdown -h now"
+super + shift + BackSpace
+	prompt "Reboot computer?" "sudo -A shutdown -r now"
+super + shift + Escape
+	prompt "Leave Xorg?" "killall Xorg"
+super + x
+	lock
+XF86Launch1
+	xset dpms force off
+XF86AudioMute
+	pulsemixer --toggle-mute
+XF86AudioLowerVolume
+	pulsemixer --change-volume -{5}
+XF86AudioRaiseVolume
+	pulsemixer --change-volume +{5}
+shift+XF86AudioLowerVolume
+	pulsemixer --change-volume -{10}
+shift+XF86AudioRaiseVolume
+	pulsemixer --change-volume +{10}
+control+XF86AudioLowerVolume
+	pulsemixer --change-volume -{1}
+control+XF86AudioRaiseVolume
+	pulsemixer --change-volume +{1}
+XF86AudioNext
+	mpc {next}
+XF86AudioPlay
+	mpc {toggle}
+XF86AudioPrev
+	mpc prev
+XF86AudioStop
+	mpc pause
+XF86MonBrightnessDown
+	xbacklight -dec 15
+XF86MonBrightnessUp
+	xbacklight -inc 15
+
+
+# Recording
+# Take screenshot
+Print
+	maim ~/Screenshot/pic-full-$(date '+%Y-%m-%d-%H-%M-%S').png && notify-send "Saved Screenshot as $(date '+%Y-%m-%d-%H-%M-%S').png"
+# Pick screenshot type
+shift + Print
+	maimpick
+# Record audio or video
+super + Print
+	dmenurecord
+# kill active recording
+super + Delete
+	dmenurecord kill
+
+# Pause audio
+super +  p
+	mpc toggle
+# Changes to next/previous tracks
+super + {comma,period}
+	mpc {prev,next}
+# Restart track
+super + shift + less
+	mpc seek 0%
+# Increase volume
+super + {equal,plus}
+	pulsemixer --change-volume +{5,15}
+# Decrease volume
+super {_,shift +} + minus
+	pulsemixer --change-volume -{5,15}
+# Seek foward in song
+super + {_,shift +} bracketright
+	mpc seek +{10,120}
+# Seek backward in song
+super + {_,shift +} bracketleft
+	mpc seek -{10,120}
+
+# Function keys
+# Show readme
+#super + F1
+#	groff -mom $HOME/.local/share/larbs/readme.mom -Tpdf | zathura -
+# Change display
+super + F3
+	displayselect
+# Hibernate
+super + F4
+	prompt 'Hibernate computer?' 'sudo systemctl suspend'
+# Restart/rescan wifi/eth networks
+super + F5
+	sudo -A systemctl restart NetworkManager && notify-send " Restarting NetworkManager"
+# Start torrent daemon/open interface
+super + F6
+	torwrap
+# toggle torrent daemon
+super + F7
+	td-toggle
+# sync email
+super + F8
+	mailsync
+# Mount a USB drive or Android device
+super + F9
+	dmenumount
+# Unmount a USB drive or Android device
+super + F10
+	dmenuumount
+# Search with Duckduckgo
+super + F11
+	startsearch
+# Network Manager interface
+super + F12
+	$TERMINAL -e sudo -A nmtui

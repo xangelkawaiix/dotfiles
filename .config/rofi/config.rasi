@@ -1,9 +1,18 @@
-/** Configured For Applets **/
-
 configuration {
-  show-icons:         true;
-  icon-theme:         "Papirus";
-  location: 5;
-  yoffset: -50;
-  xoffset: -20;
-}
+ modi: "window,drun";
+ font: "Cantarell 10";
+ icon-theme: "Papirus";
+ show-icons: false;
+ combi-modi: "window,drun";
+ yoffset: 35;
+ xoffset: 20;
+ padding: 20;
+ line-padding: 5;
+ lines: 10;
+ columns: 1;
+ width: 25;
+ location: 1;
+ hide-scrollbar: true;
+ }
+
+@import "/usr/share/rofi/themes/slate.rasi"

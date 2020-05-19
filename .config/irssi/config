@@ -2,13 +2,13 @@ servers = (
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { 
+  {
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
   },
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
+  {
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
@@ -30,7 +30,7 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "yes";
-    password = "j68V%^*n1s";
+    password = "";
   }
 );
 
@@ -42,7 +42,7 @@ chatnets = {
     max_whois = "4";
     max_query_chans = "5";
   };
-  EFNet = { 
+  EFNet = {
     type = "IRC";
     max_kicks = "4";
     max_msgs = "3";
@@ -66,7 +66,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  OFTC = { 
+  OFTC = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
@@ -84,7 +84,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  Rizon = { 
+  Rizon = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
@@ -102,12 +102,10 @@ chatnets = {
 
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
-  { name = "silc"; chatnet = "silc"; autojoin = "No"; },
   { name = "#archlinux"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#vim"; chatnet = "FreeNode"; autojoin = "yes"; },
   { name = "#go-nuts"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#cyberpunk"; chatnet = "FreeNode"; autojoin = "yes"; },
-  { name = "#elasticsearch"; chatnet = "FreeNode"; autojoin = "yes"; }
+  { name = "#cyberpunk"; chatnet = "FreeNode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -315,11 +313,7 @@ statusbar = {
   };
 };
 settings = {
-  core = {
-    real_name = "Danke Hidayat";
-    user_name = "nishi_miya_san";
-    nick = "nishi_miya_san";
-  };
+  core = { real_name = "Unknown"; user_name = "arisu"; nick = "arisu"; };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { theme = "gruvbox"; };
   "perl/core/scripts" = {

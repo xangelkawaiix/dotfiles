@@ -8,7 +8,7 @@ alias \
 	yt="youtube-dl -f 'best[ext=mp4,height<=720]+bestaudio[ext=flac]/best[height<=720]+bestaudio' --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
 	yta="yt -x -f bestaudio[ext=flac]/best" \
 	ffmpeg="ffmpeg -hide_banner" \
-	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)" # It enables the `pauseallmpv` command
+	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
 
 alias \
 	mv="mv -iv" \
@@ -25,8 +25,8 @@ alias \
 # Abbrev. common command
 alias \
 	YT="youtube-viewer" \
-        gallery-dl="gallery-dl -d $HOME/Pictures/gallery-dl/" \
-        tmux="tmux -f $XDG_CONFIG_HOME/.config/tmux.conf" \
+        gdl="gallery-dl -d $HOME/Pictures/gallery-dl/" \
+        tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf" \
         weechat="weechat -d $XDG_CONFIG_HOME/weechat" \
         mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc" \
         abook="abook --config $XDG_CONFIG_HOME/abook/abookrc --datafile $XDG_CACHE_HOME/abook/addressbook" \
@@ -37,6 +37,7 @@ alias \
 # Colorize commmand when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
+	la="ls -a --color=auto --group-directories-first" \
 	ccat="highlight --out-format=ansi" \
 	lsp="pacman -Qett --color=always | less" \
 	grep="grep --color=auto" \
