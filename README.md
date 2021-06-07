@@ -11,6 +11,6 @@
 <h1 align="center"><b>Features</b></h1>
 
 - Volume and clock bar
-- Blurred terminal
-- minimal custom<a href="https://github.com/akshat46/FlyingFox">firefox css</a>
+- <a href="https://github.com/ibhagwan/picom">ibhagwan picom fork</a> for blur and rounded effect
+- minimal custom <a href="https://github.com/akshat46/FlyingFox">firefox css</a>
 - <a href="https://github.com/nishinsagume/nishi-startpage">custom startpage</a>
