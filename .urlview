@@ -1,1 +1,0 @@
-COMMAND exec >> /tmp/urlview.out 2>&1; set -x; firefox

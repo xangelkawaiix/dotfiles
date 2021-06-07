@@ -1,9 +1,0 @@
-#!/bin/sh
-# image downloader by giving the number id
-
-case $1 in
-        booru) gallery-dl "https://danbooru.donmai.us/posts/"$2"" & ;;
-        pixiv) gallery-dl "https://www.pixiv.net/member_illust.php?mode=medium&illust_id="$2"" & ;;
-        nh) gallery-dl "https://nhentai.net/g/"$2"" & ;;
-        eh) gallery-dl "https://e-hentai.org/g/"$2"" & ;;
-esac

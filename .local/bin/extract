@@ -31,7 +31,7 @@ if [ -f "$archive" ] ; then
 		*.tar) tar xvf "$archive" ;;
 		*.zip) unzip "$archive" ;;
 		*.Z) uncompress "$archive" ;;
-		*.7z) 7z x "$archive" ;;
+		*.7z|*.jar) 7z x "$archive" ;;
 		*.xz) unxz "$archive" ;;
 		*.exe) cabextract "$archive" ;;
 		*) printf "extract: '%s' - unknown archive method\\n" "$archive" ;;

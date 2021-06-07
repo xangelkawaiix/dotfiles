@@ -1,69 +1,59 @@
-" Default mapleader
 let mapleader =","
 
-if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
-  echo "Downloading junegunn/vim-plug to manage plugins..."
-  silent !mkdir -p ~/.config/nvim/autoload/
-  silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ~/.config/nvim/autoload/plug.vim
-endif
-
 call plug#begin('~/.config/nvim/plugged')
-Plug 'tpope/vim-surround'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'jreybert/vimagit'
-Plug 'LukeSmithxyz/vimling'
-Plug 'vimwiki/vimwiki'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-commentary'
 Plug 'vifm/vifm.vim'
 Plug 'kovetskiy/sxhkd-vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-Plug 'arcticicestudio/nord-vim'
-Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'sainnhe/gruvbox-material'
+Plug 'vim-syntastic/syntastic'
+Plug 'dylanaraps/wal.vim'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
-set bg=dark
-set go=a
-set mouse=a
+set bg=dark termguicolors
+set go=a mouse=a
 set hlsearch
 set clipboard+=unnamedplus
-set expandtab
-set incsearch
-set infercase
-set softtabstop=2
-set shiftwidth=2
-set showtabline=2
-" set cursorline
-set smartindent
+set expandtab infercase incsearch
+set foldmethod=indent foldlevel=99
+set softtabstop=2 shiftwidth=2 showtabline=2
+"set cursorline cursorcolumn
 set autoindent
-set shortmess+=I
+set smartindent
 set smartcase
 set ignorecase
-set cursorcolumn
+set shortmess+=c
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
 	filetype plugin on
 	syntax on
 	set encoding=utf-8
-	set number relativenumber
-	colorscheme nord
+	set nonumber
+        set magic
+        set noshowmode
+        set title
+" Don't show signcolumn
+        set signcolumn=no
+	"colorscheme cs
 
-" live latex preview
-let g:livepreview_previewer = 'zathura'
-let g:livepreview_engine = 'xelatex'
+
+let g:startify_custom_header = [
+  \ '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
+  \ '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║',
+  \ '██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║',
+  \ '██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║',
+  \ '██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║',
+  \ '╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝',
+  \ '',
+ \]
+
 " Vim default
-let g:Hexokinase_highlighters = [ 'foreground' ]
-
-" All possible highlighters
-let g:Hexokinase_highlighters = [
-\   'background',
-\   'backgroundfull',
-\   'foreground',
-\   'foregroundfull'
-\ ]
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
 augroup manlaunchtoc
     autocmd!
@@ -79,8 +69,8 @@ augroup manlaunchtoc
 augroup end
 
 " vim airline plugin
- let g:airline#extensions#tabline#enabled = 1
- let g:airline_theme='nord'
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline_theme= 'bubblegum'
 
 " Enable autocompletion:
   set wildmode=longest,list,full
@@ -105,13 +95,6 @@ augroup end
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
   set splitbelow splitright
-
-" vimling:
-  nm <leader>d :call ToggleDeadKeys()<CR>
-  imap <leader>d <esc>:call ToggleDeadKeys()<CR>a
-  nm <leader>i :call ToggleIPA()<CR>
-  imap <leader>i <esc>:call ToggleIPA()<CR>a
-  nm <leader>q :call ToggleProse()<CR>
 
 " Shortcutting split navigation, saving a keypress:
   map <C-h> <C-w>h
@@ -291,3 +274,5 @@ augroup end
 """.xml
   autocmd FileType xml inoremap ,e <item><Enter><title><++></title><Enter><guid<space>isPermaLink="false"><++></guid><Enter><pubDate><Esc>:put<Space>=strftime('%a, %d %b %Y %H:%M:%S %z')<Enter>kJA</pubDate><Enter><link><++></link><Enter><description><![CDATA[<++>]]></description><Enter></item><Esc>?<title><enter>cit
   autocmd FileType xml inoremap ,a <a href="<++>"><++></a><++><Esc>F"ci"
+
+

@@ -5,8 +5,8 @@ command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim fo
 alias \
         ka="killall" \
         ku="ka -u $USER" \
-	yt="youtube-dl -f 'best[ext=mp4,height<=720]+bestaudio[ext=flac]/best[height<=720]+bestaudio' --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
-	yta="yt -x -f bestaudio[ext=flac]/best" \
+	yt="youtube-dl -f 'best[ext=mkv,height<=?720]+bestaudio[ext=flac]/best[height<=?720]+bestaudio' --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
+	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
 	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
 
@@ -24,7 +24,10 @@ alias \
 
 # Abbrev. common command
 alias \
-	YT="youtube-viewer" \
+        nb="newsboat" \
+        pf="pfetch" \
+        mp="ncmpcpp" \
+	YT="pipe-viewer" \
         gdl="gallery-dl -d $HOME/Pictures/gallery-dl/" \
         tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf" \
         weechat="weechat -d $XDG_CONFIG_HOME/weechat" \
@@ -37,7 +40,8 @@ alias \
 # Colorize commmand when possible.
 alias \
 	ls="ls -hN --color=auto --group-directories-first" \
-	la="ls -a --color=auto --group-directories-first" \
+	la="ls -lah --color=auto --group-directories-first" \
+	ll="ls -lh --color=auto --group-directories-first" \
 	ccat="highlight --out-format=ansi" \
 	lsp="pacman -Qett --color=always | less" \
 	grep="grep --color=auto" \
@@ -47,7 +51,9 @@ alias \
 alias \
         magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
+        cols="colorscript -e panes" \
+        ncmub="ncmpcpp-ueberzug"
 
 
 vf() { fzf | xargs -r -I % $EDITOR % ;}
-fh() { eval $(history | fzf +s --tac | sed 's/ *[0-9]* *//') ;}
+fh() { eval $(history 1 | fzf +s --tac | sed 's/ *[0-9]* *//') ;}

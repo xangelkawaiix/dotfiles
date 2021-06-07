@@ -1,0 +1,13 @@
+hash -d h=~/ 
+hash -d a=~/Documents/papers 
+hash -d rp=~/Repos 
+hash -d rc=~/Repos/Cloned 
+hash -d d=~/Documents 
+hash -d D=~/Downloads 
+hash -d m=~/Music 
+hash -d pp=~/Pictures 
+hash -d sp=~/Screenshot 
+hash -d vv=~/Videos 
+hash -d sc=~/.local/bin 
+hash -d cf=~/.config 
+hash -d sS=~/.local/share 

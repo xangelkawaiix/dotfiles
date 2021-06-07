@@ -1,12 +1,13 @@
+#!/bin/zsh
 # Profile file. Runs on login. Environmental variables are set here.
 
 # Adds `~/.local/bin` to $PATH
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//'):${XDG_CONFIG_HOME:-$HOME/.config}/polybar/"
+export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':'):/usr/lib/surfraw"
 
 # Default programs:
 export EDITOR="nvim"
 export FILE="ranger"
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 export BROWSERCLI="w3m"
 export READER="zathura"
@@ -26,12 +27,11 @@ export INPUTRC="${XDG_CONFIG_HOME:-$HOME/.config}/inputrc"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export PASSWORD_STORE_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/pass"
 export WINEPREFIX="${XDG_DATA_HOME:-$HOME/.local/share}/wineprefixes/default"
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
+#export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg/"
 export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
 export WEECHAT_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/weechat"
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
-
 
 # Other program settings:
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
@@ -49,14 +49,18 @@ export LESSOPEN="| /usr/bin/highlight -O ansi %s 2>/dev/null"
 export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
 export MOZ_USE_XINPUT2="1"		# Mozilla smooth scrolling/touchpads.
 export QT_QPA_PLATFORMTHEME="gtk2"	# Have QT use gtk2 theme.
+export NNN_PLUG="i:imgview;o:fzopen;w:setbg"
+export NNN_TRASH=1
+export NNN_BMS="d:~/Documents;w:~/Download;m:~/Music;r:~/Repos;v:~/Videos;p:~/Pictures;s:~/samsung"
+export NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip)$"
+export NNN_FIFO="/tmp/nnn.fifo"
+export CALCURSE_CALDAV_PASSWORD="$(pass show calcurse) calcurse-caldav"
+mpd >/dev/null 2>&1 &
 
-mpd-discord >/dev/null 2>&1 &
-
-[ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/shortcutrc ] && shortcuts >/dev/null 2>&1 &
+[ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/shortcuts.conf" ] && shortcuts >/dev/null 2>&1 &
 
 # Start graphical server on tty1 if not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! ps -e | grep -qw Xorg && exec startx
-
+[ "$(tty)" = "/dev/tty1" ] && ! pidof Xorg >/dev/null 2>&1 && exec startx
 # Switch escape and caps if tty and no passwd required:
 sudo -n loadkeys ~/.local/bin/ttymaps.kmap 2>/dev/null
 
@@ -122,3 +126,4 @@ ex=🎯:\
 *.part=💔:\
 *.torrent=🔽:\
 "
+. "$HOME/.cargo/env"

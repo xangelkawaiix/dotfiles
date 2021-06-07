@@ -1,38 +1,58 @@
 # Basic binds
+super + q
+	bspc node -c
 super + Return
 	$TERMINAL
-super + shift + Return
-	$TERMINAL -e tmux
 super + d
 	dmenu_run
 super + f
-	rofi -show window
+	bspfullscreen
 super + r
 	$TERMINAL -e $FILE
+super + shift + r
+	bspc wm -r
 super + e
 	$TERMINAL -e neomutt
-super + m
-	$TERMINAL -e ncmpcpp
+super + b
+	{ polybar-msg cmd toggle; bspc config top_padding +0 ,\
+	polybar-msg cmd toggle; bspc config top_padding 50 }
 super + shift + m
 	pulsemixer --toggle-mute
-super + n
-	$TERMINAL -e newsboat
-super + i
-	$TERMINAL -e htop
-super + y
-	$TERMINAL -e calcurse -D ~/.config/calcurse
+super + t
+	redshift_toggle
 super + shift + a
 	$TERMINAL -e pulsemixer || alsamixer
-super + shift + c
-	camtoggle
 super + shift + e
 	rofi-pass
-super +  w
-	$TERMINAL -e sudo nmtui
 super + shift + w
 	$BROWSER
 super + shift + g
 	gimp
+
+# bspwm
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+# Swap window with direction
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+# Toggle floating
+super + o
+	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+# Focus on desktop
+super + {0-9}
+	bspc desktop -f ^{0-9}
+# Send window to desktop
+super + shift + {0-9}
+	bspc node -d ^{0-9}
+# Expand a window by moving one of its side outward
+alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+# Contract a window by moving one of its side inward
+alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+# Move a floating window
+alt + {y,u,i,o}
+	xdo move {-x -20,-y +20,-y -20,-x +20}
 
 # Et cetera...
 super + grave
@@ -49,6 +69,7 @@ super + shift + Escape
 	prompt "Leave Xorg?" "killall Xorg"
 super + x
 	lock
+
 XF86Launch1
 	xset dpms force off
 XF86AudioMute
@@ -66,9 +87,9 @@ control+XF86AudioLowerVolume
 control+XF86AudioRaiseVolume
 	pulsemixer --change-volume +{1}
 XF86AudioNext
-	mpc {next}
+	mpc next
 XF86AudioPlay
-	mpc {toggle}
+	mpc toggle
 XF86AudioPrev
 	mpc prev
 XF86AudioStop
@@ -78,21 +99,13 @@ XF86MonBrightnessDown
 XF86MonBrightnessUp
 	xbacklight -inc 15
 
-
 # Recording
 # Take screenshot
 Print
-	maim ~/Screenshot/pic-full-$(date '+%Y-%m-%d-%H-%M-%S').png && notify-send "Saved Screenshot as $(date '+%Y-%m-%d-%H-%M-%S').png"
+	maim -u ~/Screenshot/pic-full-$(date '+%Y-%m-%d-%H-%M-%S').png && notify-send "Saved Screenshot as $(date '+%Y-%m-%d-%H-%M-%S').png"
 # Pick screenshot type
 shift + Print
 	maimpick
-# Record audio or video
-super + Print
-	dmenurecord
-# kill active recording
-super + Delete
-	dmenurecord kill
-
 # Pause audio
 super +  p
 	mpc toggle
@@ -116,10 +129,6 @@ super + {_,shift +} bracketleft
 	mpc seek -{10,120}
 
 # Function keys
-# Show readme
-#super + F1
-#	groff -mom $HOME/.local/share/larbs/readme.mom -Tpdf | zathura -
-# Change display
 super + F3
 	displayselect
 # Hibernate
@@ -127,7 +136,7 @@ super + F4
 	prompt 'Hibernate computer?' 'sudo systemctl suspend'
 # Restart/rescan wifi/eth networks
 super + F5
-	sudo -A systemctl restart NetworkManager && notify-send " Restarting NetworkManager"
+	sudo -A systemctl restart NetworkManager && notify-send "Restarting NetworkManager"
 # Start torrent daemon/open interface
 super + F6
 	torwrap
@@ -143,9 +152,6 @@ super + F9
 # Unmount a USB drive or Android device
 super + F10
 	dmenuumount
-# Search with Duckduckgo
+# Open networkmanager_dmenu
 super + F11
-	startsearch
-# Network Manager interface
-super + F12
-	$TERMINAL -e sudo -A nmtui
+	networkmanager_dmenu
