@@ -1,12 +1,14 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
+
+## Add this to your wm startup file.
 
 # Terminate already running bar instances
 killall -q polybar
-# If all your bars have ipc enabled, you can also use
-# polybar-msg cmd quit
 
-#launch
-polybar -c ~/.config/polybar/config volume &
-polybar -c ~/.config/polybar/config utils &
+# Wait until the processes have been shut down
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-echo "Bars launched....
+# Launch polybar for all monitors
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+    MONITOR=$m polybar -c ~/.config/polybar/config.ini main &
+done
