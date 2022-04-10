@@ -1,20 +1,13 @@
+
 cfp	~/.profile
-cfx	~/.xprofile
 cfzp	~/.zprofile
 cfz	${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.zshrc
-cfd	${XDG_CONFIG_HOME:-$HOME/.config}/Xresources
 cfa	${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc
 bf	${XDG_CONFIG_HOME:-$HOME/.config}/files
 bsp	${XDG_CONFIG_HOME:-$HOME/.config}/bspwm/bspwmrc
 bd	${XDG_CONFIG_HOME:-$HOME/.config}/directories
 cfv	${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim
 cfr	${XDG_CONFIG_HOME:-$HOME/.config}/ranger/rc.conf
-cfm	${XDG_CONFIG_HOME:-$HOME/.config}/mutt/muttrc
-cfu	${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/urls
-cfn	${XDG_CONFIG_HOME:-$HOME/.config}/newsboat/config
-cfmb	${XDG_CONFIG_HOME:-$HOME/.config}/ncmpcpp/bindings
-cfmc	${XDG_CONFIG_HOME:-$HOME/.config}/ncmpcpp/config.ini
 cfP	${XDG_CONFIG_HOME:-$HOME/.config}/polybar/config
 cfk	${XDG_CONFIG_HOME:-$HOME/.config}/sxhkd/sxhkdrc
 cfpc	${XDG_CONFIG_HOME:-$HOME/.config}/picom.conf
-cftm    ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf

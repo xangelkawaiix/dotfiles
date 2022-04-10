@@ -1,14 +1,11 @@
 # You can add comments to these files with #
 h	~/
-a	~/Documents/papers
-rp	~/Repos
-rc	~/Repos/Cloned
+rp ~/Documents/repos
 d	~/Documents
 D	~/Downloads
 m	~/Music
-pp	~/Pictures
-sp	~/Screenshot
-vv	~/Videos
-sc	~/.local/bin
-cf	~/.config
-sS      ~/.local/share
+pp ~/Pictures
+vv ~/Videos
+sc ~/.local/bin
+cf ~/.config
+sS ~/.local/share

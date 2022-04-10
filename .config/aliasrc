@@ -3,9 +3,9 @@
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d" # Use neovim for vim if present.
 
 alias \
-        ka="killall" \
-        ku="ka -u $USER" \
-	yt="youtube-dl -f 'best[ext=mkv,height<=?720]+bestaudio[ext=flac]/best[height<=?720]+bestaudio' --add-metadata -i -o '%(upload_date)s-%(title)s.%(ext)s'" \
+  ka="killall" \
+  ku="ka -u $USER" \
+	yt="yt-dlp ---wait-for-video 60 --add-metadata -i --write-thumbnail" \
 	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
 	mpv="mpv --input-ipc-server=/tmp/mpvsoc$(date +%s)"
@@ -14,28 +14,17 @@ alias \
 	mv="mv -iv" \
 	mkd="mkdir -pv" \
 	cp="cp -iv" \
-        rm="rm -v" \
+  rm="rm -v" \
 	f="$FILE" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-	trem="transmission-remote" \
-	x="sxiv -ft *" \
+  nvim="$EDITOR" \
 	sdn="sudo shutdown -h now"
 
 # Abbrev. common command
 alias \
-        nb="newsboat" \
-        pf="pfetch" \
-        mp="ncmpcpp" \
-	YT="pipe-viewer" \
-        gdl="gallery-dl -d $HOME/Pictures/gallery-dl/" \
-        tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf" \
-        weechat="weechat -d $XDG_CONFIG_HOME/weechat" \
-        mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc" \
-        abook="abook --config $XDG_CONFIG_HOME/abook/abookrc --datafile $XDG_CACHE_HOME/abook/addressbook" \
-        calcurse="calcurse -C $XDG_CONFIG_HOME/calcurse -D $XDG_DATA_HOME/calcurse" \
-        dosbox="dosbox -conf $XDG_CONFIG_HOME/dosbox/dosbox.conf" \
-        irssi="irssi --config=$XDG_CONFIG_HOME/irssi/config --home=$XDG_DATA_HOME/irssi"
+  nf="neofetch" \
+  gdl="gallery-dl -d $HOME/Pictures/gallery-dl/" \
 
 # Colorize commmand when possible.
 alias \
@@ -49,11 +38,7 @@ alias \
 
 # Some other stuffs
 alias \
-        magit="nvim -c MagitOnly" \
-	ref="shortcuts >/dev/null; source ~/.config/shortcutrc" \
-        cols="colorscript -e panes" \
-        ncmub="ncmpcpp-ueberzug"
-
+  ref="shortcuts >/dev/null; source ~/.config/shortcutrc"
 
 vf() { fzf | xargs -r -I % $EDITOR % ;}
 fh() { eval $(history 1 | fzf +s --tac | sed 's/ *[0-9]* *//') ;}
