@@ -1,16 +1,6 @@
-<h1 align="center"><b>Dotfiles Reborn</b></h1>
+<h1 align="center"><b>Personal Dotfiles</b></h1>
+
 <p align="center">
-<img src="https://raw.githubusercontent.com/nishinsagume/dotfiles/master/desktop_1.png">
-<img src="https://raw.githubusercontent.com/nishinsagume/dotfiles/master/desktop_browser.png">
+<img src="https://raw.githubusercontent.com/nishinsagume/dotfiles/master/flashbang.png">
+<u><b>Some conf are not original and heavily ctrl-v</b></u>
 </p>
-
-<p>The sequel of archrice dots focusing on eye candy but also functionality</p>
-
-##
-
-<h1 align="center"><b>Features</b></h1>
-
-- Volume and clock bar
-- <a href="https://github.com/ibhagwan/picom">ibhagwan picom fork</a> for blur and rounded effect
-- minimal custom <a href="https://github.com/akshat46/FlyingFox">firefox css</a>
-- <a href="https://github.com/nishinsagume/nishi-startpage">custom startpage</a>
