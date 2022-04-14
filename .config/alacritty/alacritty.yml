@@ -1,215 +1,111 @@
-env:
-  TERM: alacritty
+# Dracula theme for Alacritty
+# https://draculatheme.com/alacritty
+#
+# Color palette
+# https://spec.draculatheme.com
+#
+# Template
+# https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 
 window:
-  dimensions:
-    columns: 75
-    lines: 25
   padding:
     x: 20
     y: 20
 
+window.opacity: 0.85
+  # Colors (Gruvbox Material Dark Medium)
+
+# colors:
+#   primary:
+#     background: '0x282828'
+#     foreground: '0xdfbf8e'
+
+#   normal:
+#     black:   '0x665c54'
+#     red:     '0xea6962'
+#     green:   '0xa9b665'
+#     yellow:  '0xe78a4e'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     cyan:    '0x89b482'
+#     white:   '0xdfbf8e'
+
+#   bright:
+#     black:   '0x928374'
+#     red:     '0xea6962'
+#     green:   '0xa9b665'
+#     yellow:  '0xe3a84e'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     cyan:    '0x89b482'
+#     white:   '0xdfbf8e'
+
+
+# TokyoNight Alacritty Colors
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x24283b'
+#     foreground: '0xc0caf5'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x1D202F'
+#     red:     '0xf7768e'
+#     green:   '0x9ece6a'
+#     yellow:  '0xe0af68'
+#     blue:    '0x7aa2f7'
+#     magenta: '0xbb9af7'
+#     cyan:    '0x7dcfff'
+#     white:   '0xa9b1d6'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x414868'
+#     red:     '0xf7768e'
+#     green:   '0x9ece6a'
+#     yellow:  '0xe0af68'
+#     blue:    '0x7aa2f7'
+#     magenta: '0xbb9af7'
+#     cyan:    '0x7dcfff'
+#     white:   '0xc0caf5'
+
+#   indexed_colors:
+#     - { index: 16, color: '0xff9e64' }
+#     - { index: 17, color: '0xdb4b4b' }
+
+  # TAM colorsheme
 colors:
   # Default colors
   primary:
-    background: '0x30333d'
-    foreground: '0xc0c0c0'
+    background: '0xfffcfd'
+    foreground: '0x250e07'
 
   # Normal colors
   normal:
-    black:   '0x292b34'
-    red:     '0xf9929b'
-    green:   '0x7ed491'
-    yellow:  '0xfbdf90'
-    blue:    '0xa3b8ef'
-    magenta: '0xccaced'
-    cyan:    '0x9ce5c0'
-    white:   '0xdfd7d7'
+    black:   '0xf3eae9'
+    red:     '0x873e40'
+    green:   '0x839a53'
+    yellow:  '0xd4a520'
+    blue:    '0xa6b6ce'
+    magenta: '0xd68482'
+    cyan:    '0x89beb7'
+    white:   '0xecc3c2'
 
   # Bright colors
   bright:
-    black:   '0x585e74'
-    red:     '0xf9929b'
-    green:   '0x7ed491'
-    yellow:  '0xfbdf90'
-    blue:    '0x74c3e4'
-    magenta: '0xccaced'
-    cyan:    '0x9ce5c0'
-    white:   '0xdfd7d7'
+    black:   '0xd8b8b3'
+    red:     '0x832426'
+    green:   '0x6f873e'
+    yellow:  '0xc39104'
+    blue:    '0x7b91b3'
+    magenta: '0xc97270'
+    cyan:    '0x63a098'
+    white:   '0xf2cc60'
 
-dynamic_padding: false
-title: Alacritty
 
-class:
-  instance: Alacritty
-  general: Alacritty
-
-gtk_theme_variant: None
-
-scrolling:
-  history: 10000
-
-  # Number of lines the viewport will move for every line scrolled when
-  # scrollback is enabled (history > 0).
-  multiplier: 1
-
-# Font configuration
 font:
   normal:
-    family: ShureTechMono Nerd Font Mono
+    family: azukifontBI
     style: Regular
-  bold:
-    family: ShureTechMono Nerd Font Mono
-    style: Bold
-  italic:
-    family: ShureTechMono Nerd Font Mono
-    style: Italic
-
-  bold_italic:
-    family: ShureTechMono Nerd Font Mono
-    style: Bold Italic
-
-  # Point size
-  size: 8
-
-  offset:
-    x: 0
-    y: 0
-
-  glyph_offset:
-    x: 0
-    y: 0
-
-# If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
-
-
-visual_bell:
-  animation: EaseOutExpo
-  duration: 0
-  color: '#ffffff'
-
-background_opacity: 0.70
-
-selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
-
-  save_to_clipboard: true
-
-dynamic_title: true
-
-cursor:
-  style: Underline
-
-  # If this is `true`, the cursor will be rendered as a hollow box when the
-  # window is not focused.
-  unfocused_hollow: true
-
-# Live config reload (changes require restart)
-live_config_reload: true
-
-working_directory: None
-
-# Send ESC (\x1b) before characters when alt is pressed.
-#alt_send_esc: true
-
-mouse:
-  # Click settings
-  #
-  # The `double_click` and `triple_click` settings control the time
-  # alacritty should wait for accepting multiple clicks as one double
-  # or triple click.
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
-
-  # If this is `true`, the cursor is temporarily hidden when typing.
-  #hide_when_typing: true
-
-  hints:
-    launcher:
-      program: xdg-open
-      args: []
-
-    mods: Control
-
-mouse_bindings:
-  - { mouse: Middle, action: Copy }
-
-key_bindings:
-  - { key: P,        mods: Alt,       action: Paste                        }
-  - { key: C,        mods: Alt,       action: Copy                         }
-  - { key: Q,        mods: Control,       action: Quit                         }
-  - { key: N,        mods: Control,       action: SpawnNewInstance             }
-  - { key: Return,   mods: Control,       action: ToggleFullscreen             }
-
-  - { key: Home,                          chars: "\x1bOH",   mode: AppCursor   }
-  - { key: Home,                          chars: "\x1b[H",   mode: ~AppCursor  }
-  - { key: End,                           chars: "\x1bOF",   mode: AppCursor   }
-  - { key: End,                           chars: "\x1b[F",   mode: ~AppCursor  }
-  - { key: Equals,   mods: Control,       action: IncreaseFontSize             }
-  - { key: Minus,    mods: Control,       action: DecreaseFontSize             }
-  - { key: Minus,    mods: Control|Shift, action: ResetFontSize                }
-  - { key: PageUp,   mods: Shift,         chars: "\x1b[5;2~"                   }
-  - { key: PageUp,   mods: Control,       chars: "\x1b[5;5~"                   }
-  - { key: PageUp,                        chars: "\x1b[5~"                     }
-  - { key: PageDown, mods: Shift,         chars: "\x1b[6;2~"                   }
-  - { key: PageDown, mods: Control,       chars: "\x1b[6;5~"                   }
-  - { key: PageDown,                      chars: "\x1b[6~"                     }
-  - { key: Left,     mods: Shift,         chars: "\x1b[1;2D"                   }
-  - { key: Left,     mods: Control,       chars: "\x1b[1;5D"                   }
-  - { key: Left,     mods: Alt,           chars: "\x1b[1;3D"                   }
-  - { key: Left,                          chars: "\x1b[D",   mode: ~AppCursor  }
-  - { key: Left,                          chars: "\x1bOD",   mode: AppCursor   }
-  - { key: Right,    mods: Shift,         chars: "\x1b[1;2C"                   }
-  - { key: Right,    mods: Control,       chars: "\x1b[1;5C"                   }
-  - { key: Right,    mods: Alt,           chars: "\x1b[1;3C"                   }
-  - { key: Right,                         chars: "\x1b[C",   mode: ~AppCursor  }
-  - { key: Right,                         chars: "\x1bOC",   mode: AppCursor   }
-  - { key: Up,       mods: Shift,         chars: "\x1b[1;2A"                   }
-  - { key: Up,       mods: Control,       chars: "\x1b[1;5A"                   }
-  - { key: Up,       mods: Alt,           chars: "\x1b[1;3A"                   }
-  - { key: Up,                            chars: "\x1b[A",   mode: ~AppCursor  }
-  - { key: Up,                            chars: "\x1bOA",   mode: AppCursor   }
-  - { key: Down,     mods: Shift,         chars: "\x1b[1;2B"                   }
-  - { key: Down,     mods: Control,       chars: "\x1b[1;5B"                   }
-  - { key: Down,     mods: Alt,           chars: "\x1b[1;3B"                   }
-  - { key: Down,                          chars: "\x1b[B",   mode: ~AppCursor  }
-  - { key: Down,                          chars: "\x1bOB",   mode: AppCursor   }
-  - { key: Tab,      mods: Shift,         chars: "\x1b[Z"                      }
-  - { key: F1,                            chars: "\x1bOP"                      }
-  - { key: F2,                            chars: "\x1bOQ"                      }
-  - { key: F3,                            chars: "\x1bOR"                      }
-  - { key: F4,                            chars: "\x1bOS"                      }
-  - { key: F5,                            chars: "\x1b[15~"                    }
-  - { key: F6,                            chars: "\x1b[17~"                    }
-  - { key: F7,                            chars: "\x1b[18~"                    }
-  - { key: F8,                            chars: "\x1b[19~"                    }
-  - { key: F9,                            chars: "\x1b[20~"                    }
-  - { key: F10,                           chars: "\x1b[21~"                    }
-  - { key: F11,                           chars: "\x1b[23~"                    }
-  - { key: F12,                           chars: "\x1b[24~"                    }
-  - { key: Back,                          chars: "\x7f"                        }
-  - { key: Back,     mods: Alt,           chars: "\x1b\x7f"                    }
-  - { key: Insert,                        chars: "\x1b[2~"                     }
-  - { key: Delete,                        chars: "\x1b[3~"                     }
-
-    # shortcuts for tmux. the leader key is control-b (0x02)
-  - { key: W,        mods: Control,       chars: "\x02&"                       }  # close tab (kill)
-  - { key: T,        mods: Control,       chars: "\x02c"                       }  # new tab
-  - { key: RBracket, mods: Control|Shift, chars: "\x02n"                       }  # select next tab
-  - { key: LBracket, mods: Control|Shift, chars: "\x02p"                       }  # select previous tab
-  - { key: RBracket, mods: Control,       chars: "\x02o"                       }  # select next pane
-  - { key: LBracket, mods: Control,       chars: "\x02;"                       }  # select last (previously used) pane
-  - { key: F,        mods: Control,       chars: "\x02/"                       }  # search (upwards) (see tmux.conf)
-
-debug:
-  # Display the time it takes to redraw each frame.
-  render_timer: false
-
-  # Keep the log file after quitting Alacritty.
-  persistent_logging: false
-
-  log_level: Warn
-
-  # Print all received window events.
-  print_events: false
+  size: 13
