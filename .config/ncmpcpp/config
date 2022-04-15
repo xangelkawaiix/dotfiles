@@ -39,8 +39,7 @@ main_window_color = default
 
 progressbar_elapsed_color = 7
 progressbar_color = "black"
-
-progressbar_look = "▃▃▃"
+progressbar_look = "ŢŤţ"
 
 mouse_support = "yes"
 header_visibility = "no"
@@ -58,8 +57,8 @@ enable_window_title = "yes"
 now_playing_prefix = " $b$7$7$9"
 now_playing_suffix = "$/b$9"
 
-#song_columns_list_format = "(6)[]{} (25)[blue]{a} (34)[white]{t|f} (5f)[magenta]{l} (1)[]{}"
-song_columns_list_format = "(25)[6]{a} (35)[4]{t} (5)[2]{l}"
+#song_columns_list_format = "(25)[6]{a} (35)[4]{t} (5)[2]{l}"
+song_columns_list_format = "(50)[6]{t} (50)[4]{ar} $b(5f)[9]{lr}$/b"
 
 color1 = "white"
 color2 = "blue"
