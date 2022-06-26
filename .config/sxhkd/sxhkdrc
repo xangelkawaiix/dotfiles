@@ -2,32 +2,21 @@
 super + q
 	bspc node -c
 super + Return
-	$TERMINAL
+  alacritty
+super + w
+  $BROWSER
 super + d
-	dmenu_run
-super + f
-	bspfullscreen
-super + r
-	$TERMINAL -e $FILE
+	$HOME/.config/rofi/launchers/colorful/launcher.sh
 super + shift + r
 	bspc wm -r
-super + e
-	$TERMINAL -e neomutt
-super + b
-	{ polybar-msg cmd toggle; bspc config top_padding +0 ,\
-	polybar-msg cmd toggle; bspc config top_padding 50 }
+super + Escape
+  pkill -USR1 -x sxhkd
+super + x
+  $HOME/.config/rofi/applets/menu/powermenu.sh
+super + n
+  $TERMINAL -e newsboat
 super + shift + m
-	pulsemixer --toggle-mute
-super + t
-	redshift_toggle
-super + shift + a
-	$TERMINAL -e pulsemixer || alsamixer
-super + shift + e
-	rofi-pass
-super + shift + w
-	$BROWSER
-super + shift + g
-	gimp
+  pulsemixer --toggle-mute
 
 # bspwm
 super + {h,j,k,l}
@@ -46,112 +35,23 @@ super + shift + {0-9}
 	bspc node -d ^{0-9}
 # Expand a window by moving one of its side outward
 alt + {h,j,k,l}
-	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+	bspc node -z {left -30 0,bottom 0 30,top 0 -30,right 30 0}
 # Contract a window by moving one of its side inward
 alt + shift + {h,j,k,l}
-	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+	bspc node -z {right -30 0,top 0 30,bottom 0 -30,left 30 0}
 # Move a floating window
 alt + {y,u,i,o}
-	xdo move {-x -20,-y +20,-y -20,-x +20}
+	xdo move {-x -30,-y +30,-y -30,-x +30}
 
-# Et cetera...
-super + grave
-	dmenuunicode
-super + Scroll_Lock
-	killall screenkey || screenkey
-super + Insert
-	showclip
-super + shift + x
-	prompt "Shutdown computer?" "sudo -A shutdown -h now"
-super + shift + BackSpace
-	prompt "Reboot computer?" "sudo -A shutdown -r now"
-super + shift + Escape
-	prompt "Leave Xorg?" "killall Xorg"
-super + x
-	lock
 
-XF86Launch1
-	xset dpms force off
-XF86AudioMute
-	pulsemixer --toggle-mute
-XF86AudioLowerVolume
-	pulsemixer --change-volume -{5}
-XF86AudioRaiseVolume
-	pulsemixer --change-volume +{5}
-shift+XF86AudioLowerVolume
-	pulsemixer --change-volume -{10}
-shift+XF86AudioRaiseVolume
-	pulsemixer --change-volume +{10}
-control+XF86AudioLowerVolume
-	pulsemixer --change-volume -{1}
-control+XF86AudioRaiseVolume
-	pulsemixer --change-volume +{1}
-XF86AudioNext
-	mpc next
-XF86AudioPlay
-	mpc toggle
-XF86AudioPrev
-	mpc prev
-XF86AudioStop
-	mpc pause
-XF86MonBrightnessDown
-	xbacklight -dec 15
-XF86MonBrightnessUp
-	xbacklight -inc 15
-
-# Recording
-# Take screenshot
-Print
-	maim -u ~/Screenshot/pic-full-$(date '+%Y-%m-%d-%H-%M-%S').png && notify-send "Saved Screenshot as $(date '+%Y-%m-%d-%H-%M-%S').png"
-# Pick screenshot type
-shift + Print
-	maimpick
-# Pause audio
-super +  p
-	mpc toggle
-# Changes to next/previous tracks
-super + {comma,period}
-	mpc {prev,next}
-# Restart track
-super + shift + less
-	mpc seek 0%
-# Increase volume
+# media key
 super + {equal,plus}
-	pulsemixer --change-volume +{5,15}
-# Decrease volume
-super {_,shift +} + minus
-	pulsemixer --change-volume -{5,15}
-# Seek foward in song
-super + {_,shift +} bracketright
-	mpc seek +{10,120}
-# Seek backward in song
-super + {_,shift +} bracketleft
-	mpc seek -{10,120}
-
-# Function keys
-super + F3
-	displayselect
-# Hibernate
-super + F4
-	prompt 'Hibernate computer?' 'sudo systemctl suspend'
-# Restart/rescan wifi/eth networks
-super + F5
-	sudo -A systemctl restart NetworkManager && notify-send "Restarting NetworkManager"
-# Start torrent daemon/open interface
-super + F6
-	torwrap
-# toggle torrent daemon
-super + F7
-	td-toggle
-# sync email
-super + F8
-	mailsync
-# Mount a USB drive or Android device
-super + F9
-	dmenumount
-# Unmount a USB drive or Android device
-super + F10
-	dmenuumount
-# Open networkmanager_dmenu
-super + F11
-	networkmanager_dmenu
+  pulsemixer --change-volume +{5,15}
+super + {_,shift +} + minus
+  pulsemixer --change-volume -{5,15}
+super + p
+  mpc toggle
+alt + p
+  scrot $HOME/screenshot/
+alt + shift + p
+  scrot -s $HOME/screenshot/
