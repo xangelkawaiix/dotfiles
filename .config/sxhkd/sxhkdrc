@@ -7,14 +7,18 @@ super + w
   $BROWSER
 super + d
 	$HOME/.config/rofi/launchers/colorful/launcher.sh
+super + s
+  $HOME/.config/rofi/applets/android/screenshot.sh
 super + shift + r
 	bspc wm -r
 super + Escape
   pkill -USR1 -x sxhkd
 super + x
-  $HOME/.config/rofi/applets/menu/powermenu.sh
+  $HOME/.config/rofi/applets/android/powermenu.sh
 super + n
   $TERMINAL -e newsboat
+super + m
+  $HOME/.config/rofi/applets/android/mpd.sh
 super + shift + m
   pulsemixer --toggle-mute
 
@@ -52,6 +56,8 @@ super + {_,shift +} + minus
 super + p
   mpc toggle
 alt + p
-  scrot $HOME/screenshot/
+  scrot $HOME/screenshot/pic-full-$(date '+%Y-%m-%d-%H-%M-%S').png && notify-send "Saved Screenshot as pic-full-$(date '+%Y-%m-%d-%H-%M-%S').png"
 alt + shift + p
-  scrot -s $HOME/screenshot/
+  scrot -s $HOME/screenshot/pic-selected-$(date '+%Y-%m-%d-%H-%M-%S').png && notify-send "Saved Screenshot as pic-selected-$(date '+%Y-%m-%d-%H-%M-%S').png"
+ctrl + alt + p
+  scrot -u $HOME/screenshot/pic-window-$(date '+%Y-%m-%d-%H-%M-%S').png && notify-send "Saved Screenshot as pic-window-$(date '+%Y-%m-%d-%H-%M-%S').png"
