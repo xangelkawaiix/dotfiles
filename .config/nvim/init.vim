@@ -1,20 +1,50 @@
 let mapleader =","
 
 call plug#begin('~/.config/nvim/plugged')
+" Very useful
+Plug 'itchyny/lightline.vim' " lightline
+Plug 'sheerun/vim-polyglot' " syntax highlighting lang pack
+Plug 'unblevable/quick-scope' " hilight 2-keystroke ftFT destinations
+Plug 'psliwka/vim-smoothie' " smooth scrolling for jump commands
+" Less necessary
+Plug 'mengelbrecht/lightline-bufferline' " add bufferline through lightline
+Plug 'romainl/vim-cool' " turns off highlighting when done searching
+Plug 'gko/vim-coloresque' " color codes are hilighted with the appropriate color
+Plug 'Yggdroot/indentLine' " indentation line and leading spaces
+
+" FUNCTIONALITY CHANGES
+" #####################
+" Quite useful for coding
+"Plug 'neoclide/coc.nvim', {'branch': 'release'} " intellisense / VSCode features
+Plug 'KabbAmine/vCoolor.vim' " color picker
+Plug 'andymass/vim-matchup' " extends % to syntax, hl {} TODO: learn more about
+Plug 'easymotion/vim-easymotion' " label-style jumps
+Plug 'justinmk/vim-sneak'
+Plug 'jiangmiao/auto-pairs' " autoindent and closing brace on {<CR>
+Plug 'xolox/vim-session' " Session manager / automatically open buffers
+  Plug 'xolox/vim-misc' " Dependency for vim-session
+Plug 'tpope/vim-surround' " matching tags text object
+Plug 'tpope/vim-repeat' " . repeats plugin operations
+" Seemingly less necessary... for now
+Plug 'preservim/nerdtree' " file explorer
+Plug 'preservim/nerdcommenter' " comment/uncomment binds
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " TODO: learn features
+Plug 'junegunn/fzf.vim' " TODO: learn features
+Plug 'michaeljsmith/vim-indent-object' " text object based on indentation
+Plug 'machakann/vim-highlightedyank' " briefly hilight yank
+Plug 'honza/vim-snippets' " snippets for all languages
+
+Plug 'rose-pine/neovim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vifm/vifm.vim'
 Plug 'kovetskiy/sxhkd-vim'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'sainnhe/gruvbox-material'
 Plug 'vim-syntastic/syntastic'
 Plug 'dylanaraps/wal.vim'
 Plug 'mhinz/vim-startify'
 call plug#end()
 
-set bg=dark termguicolors
+set bg=light termguicolors
 set go=a mouse=a
 set hlsearch
 set clipboard+=unnamedplus
@@ -23,6 +53,7 @@ set foldmethod=indent foldlevel=99
 set softtabstop=2 shiftwidth=2 showtabline=2
 "set cursorline cursorcolumn
 set autoindent
+set laststatus=2
 set smartindent
 set smartcase
 set ignorecase
@@ -34,13 +65,21 @@ set shortmess+=c
 	syntax on
 	set encoding=utf-8
 	set nonumber
-        set magic
-        set noshowmode
-        set title
+  set magic
+  set noshowmode
+  set title
 " Don't show signcolumn
         set signcolumn=no
-	"colorscheme cs
+  colorscheme rose-pine-dawn
 
+
+if !has('gui_running')
+  set t_Co=256
+endif
+
+let g:lightline = {
+      \ 'colorscheme': 'rosepine',
+      \ }
 
 let g:startify_custom_header = [
   \ '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗',
@@ -67,10 +106,6 @@ augroup manlaunchtoc
             \ wincmd p
     endif
 augroup end
-
-" vim airline plugin
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline_theme= 'bubblegum'
 
 " Enable autocompletion:
   set wildmode=longest,list,full

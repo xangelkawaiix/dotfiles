@@ -1,6 +1,0 @@
-#!/bin/sh
-# locking current session with slock
-# https://github.com/khuedoan/slock
-mpc pause &
-pauseallmpv &
-slock

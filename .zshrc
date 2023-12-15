@@ -1,4 +1,3 @@
-# If you come from bash you might have to change your $PATH.
 export PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin:$HOME/.local/bin"
 
 # Path to your oh-my-zsh installation.
@@ -8,7 +7,7 @@ ZSH=/usr/share/oh-my-zsh/
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="cypher"
+ZSH_THEME="typewritten"
 
 autoload -U colors && colors	# Load colors
 setopt autocd		# Automatically cd into typed directory.

@@ -2,4 +2,4 @@
 
 . $HOME/.xprofile
 
-ssh-agent bspwm
+ssh-agent openbox-session

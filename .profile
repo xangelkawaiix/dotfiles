@@ -8,7 +8,7 @@ export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | paste -sd ':'):/usr/lib/
 export EDITOR="nvim"
 export FILE="ranger"
 export TERMINAL="alacritty"
-export BROWSER="firefox"
+export BROWSER="brave"
 export BROWSERCLI="w3m"
 export READER="zathura"
 
@@ -56,6 +56,7 @@ export NNN_ARCHIVE="\\.(7z|bz2|gz|tar|tgz|zip)$"
 export NNN_FIFO="/tmp/nnn.fifo"
 export CALCURSE_CALDAV_PASSWORD="$(pass show calcurse) calcurse-caldav"
 mpd >/dev/null 2>&1 &
+
 
 [ ! -f "${XDG_CONFIG_HOME:-$HOME/.config}/shortcuts.conf" ] && shortcuts >/dev/null 2>&1 &
 

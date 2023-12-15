@@ -74,38 +74,99 @@ window.opacity: 0.85
 #     - { index: 16, color: '0xff9e64' }
 #     - { index: 17, color: '0xdb4b4b' }
 
-  # TAM colorsheme
+  # Witch
+# colors:
+#  # Default colors
+#  primary:
+#    background: '0x5a5475'
+#    foreground: '0xf8f8f2'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0xb29cc8'
+#    red:     '0xffb7d1'
+#    green:   '0xc0ffde'
+#    yellow:  '0xffee99'
+#    blue:    '0xb29cc8'
+#    magenta: '0xffb7d1'
+#    cyan:    '0xc0ffde'
+#    white:   '0xffee99'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0xb29cc8'
+#    red:     '0xffb7d1'
+#    green:   '0xc0ffde'
+#    yellow:  '0xffee99'
+#    blue:    '0xb29cc8'
+#    magenta: '0xffb7d1'
+#    cyan:    '0xc0ffde'
+#    white:   '0xffee99'
+
+# Noelle
+#colors:
+# # Default colors
+# primary:
+#   background: '0xfffcfd'
+#   foreground: '0x250e07'
+
+  # Normal colors
+  #normal:
+  #  black:   '0xf3eae9'
+  #  red:     '0x873e40'
+  #  green:   '0x839a53'
+  #  yellow:  '0xd4a520'
+  #  blue:    '0xa6b6ce'
+  #  magenta: '0xd68482'
+  #  cyan:    '0x89beb7'
+  #  white:   '0xecc3c2'
+
+  # Bright colors
+  # bright:
+  #   black:   '0xd8b8b3'
+  #   red:     '0x832426'
+  #   green:   '0x6f873e'
+  #   yellow:  '0xc39104'
+  #   blue:    '0x7b91b3'
+  #   magenta: '0xc97270'
+  #   cyan:    '0x63a098'
+  #   white:   '0xf2cc60'
+
 colors:
   # Default colors
   primary:
-    background: '0xfffcfd'
-    foreground: '0x250e07'
+    background: '0xffffff'
+    foreground: '0x8d8d9d'
 
   # Normal colors
   normal:
-    black:   '0xf3eae9'
-    red:     '0x873e40'
-    green:   '0x839a53'
-    yellow:  '0xd4a520'
-    blue:    '0xa6b6ce'
-    magenta: '0xd68482'
-    cyan:    '0x89beb7'
-    white:   '0xecc3c2'
+    black:   '0xc2c8d5'
+    red:     '0xbec0c9'
+    green:   '0xc2cce5'
+    yellow:  '0xa7aab3'
+    blue:    '0xc2c8d5'
+    magenta: '0xbec0c9'
+    cyan:    '0xc2cce5'
+    white:   '0xa7aab3'
 
   # Bright colors
   bright:
-    black:   '0xd8b8b3'
-    red:     '0x832426'
-    green:   '0x6f873e'
-    yellow:  '0xc39104'
-    blue:    '0x7b91b3'
-    magenta: '0xc97270'
-    cyan:    '0x63a098'
-    white:   '0xf2cc60'
-
+    black:   '0xc2c8d5'
+    red:     '0xbec0c9'
+    green:   '0xc2cce5'
+    yellow:  '0xa7aab3'
+    blue:    '0xc2c8d5'
+    magenta: '0xbec0c9'
+    cyan:    '0xc2cce5'
+    white:   '0xa7aab3'
 
 font:
+  offset:
+    x: 0
+    y: 4
   normal:
     family: azukifontBI
     style: Regular
   size: 13
+env:
+  WINIT_X11_SCALE_FACTOR: "1.2"

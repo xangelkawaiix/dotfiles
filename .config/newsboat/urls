@@ -2,51 +2,15 @@
 https://distrowatch.com/news/dw.xml "~Distrowatch: News"
 https://www.archlinux.org/feeds/news/ "Linux"
 https://aur.archlinux.org/rss/ "~AUR (Arch Linux)" "Linux"
-https://www.fsf.org/static/fsforg/rss/blogs.xml "Blog"
-https://static.fsf.org/fsforg/rss/news.xml "Linux"
-https://xkcd.com/atom.xml
-https://suckless.org/atom.xml "Code"
 
 ---Blog---
-https://begriffs.com/atom.xml "~begriffs" "Blog"
-http://verisimilitudes.net/rss.xml "Blog"
-https://haasn.xyz/atom.xml "Blog"
 https://lukesmith.xyz/rss.xml "Blog"
-https://thuleanperspective.com/feed/ "Blog"
+https://jiangsc.me/atom.xml "Blog"
+https://n-o-d-e.net/rss/rss.xml
 
 ---News---
-https://news.mit.edu/mitnews-rss.xml "~MIT News"
-
----Social---
-https://www.reddit.com/r/FirefoxCSS.rss "~REDDIT: r/FirefoxCSS" "Social"
-https://www.reddit.com/r/Startpages.rss "~REDDIT: r/Startpages" "Social"
-https://www.reddit.com/r/linux.rss "~REDDIT: r/linux" "Social"
-https://www.reddit.com/r/unixporn.rss "~REDDIT: r/unixporn" "Social"
-https://www.reddit.com/r/archlinux.rss "~REDDIT: r/archlinux" "Social"
-https://www.reddit.com/r/animemes.rss "~REDDIT: r/animemes" "Social"
-https://www.reddit.com/r/commandline.rss "~REDDIT: r/commandline" "Social"
-https://www.reddit.com/r/tf2.rss "~REDDIT: r/tf2" "Social"
-https://www.reddit.com/r/conlangs.rss "~REDDIT: r/conlang" "Social"
-https://www.reddit.com/r/opendirectories.rss "~REDDIT: r/opendirectories" "Social"
-https://www.reddit.com/r/news.rss "~REDDIT: r/news" "Social"
-https://www.reddit.com/r/worldnews.rss "~REDDIT: r/worldnews" "Social"
-https://www.reddit.com/r/todayilearned.rss "~REDDIT: r/todayilearned" "Social"
-https://www.reddit.com/r/gaming.rss "~REDDIT: r/gaming" "Social"
-https://www.reddit.com/r/videos.rss "~REDDIT: r/videos" "Social"
-https://www.reddit.com/r/lukesmith.rss "~REDDIT: r/lukesmith" "Social"
-https://www.reddit.com/r/touhou.rss "~REDDIT: r/touhou" "Social"
-https://www.reddit.com/r/touhou_NSFW.rss "~REDDIT: r/touhou_NSFW" "Social"
+https://lapi.kumparan.com/v2.0/rss/
 
 ---Podcast---
-https://dataskeptic.libsyn.com/rss "~Data Skeptic" "Podcast"
-http://vault.lunduke.com/LundukeShowMP3.xml "~The Lunduke Show" "Podcast"
-https://learningmachines101.libsyn.com/rss "~Learning Machine 101" "Podcast"
-https://notrelated.libsyn.com/rss "Podcast"
-http://askhistorians.libsyn.com/rss "Podcast"
-https://anchor.fm/s/149fd51c/podcast/rss "Podcast"
+https://notrelated.xyz/rss "Podcast"
 http://linustechtips.libsyn.com/wanshow "Podcast"
-http://xpenguin.club/rss.xml "Podcast"
-
----Torrent---
-https://nyaa.si/?page=rss
-https://sukebei.nyaa.si/?page=rss

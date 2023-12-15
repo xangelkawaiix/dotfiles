@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="https://openbox.org/"
+ xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="https://openbox.org/">
+  <menu id="root-menu" label="Applications">
+    <item label="File Manager"><action name="Execute"><command><![CDATA[xdg-open .]]></command></action></item>
+    <item label="Terminal"><action name="Execute"><command><![CDATA[alacritty]]></command></action></item>
+    <item label="Web Browser"><action name="Execute"><command><![CDATA[xdg-open http://]]></command></action></item>
+    <item label="Run command"><action name="Execute"><command><![CDATA[gmrun]]></command></action></item>
+  <separator label="Categories"/>
+  <menu id="0.797209770026715" label="Accessories">
+    <item label="7-Zip FM"><action name="Execute"><command><![CDATA[7zFM]]></command></action></item>
+    <item label="About Xfce"><action name="Execute"><command><![CDATA[xfce4-about]]></command></action></item>
+    <item label="Byobu Gnome Terminal"><action name="Execute"><command><![CDATA[gnome-terminal --name=us.kirkland.terminals.byobu --class=us.kirkland.terminals.byobu -- byobu]]></command></action></item>
+    <item label="Byobu Terminal"><action name="Execute"><command><![CDATA[alacritty -e 'env TERM=xterm-256color byobu']]></command></action></item>
+    <item label="Character Map"><action name="Execute"><command><![CDATA[gucharmap]]></command></action></item>
+    <item label="Engrampa Archive Manager"><action name="Execute"><command><![CDATA[engrampa]]></command></action></item>
+    <item label="HP Device Manager"><action name="Execute"><command><![CDATA[hp-toolbox]]></command></action></item>
+    <item label="Nemo"><action name="Execute"><command><![CDATA[nemo]]></command></action></item>
+    <item label="Neovim"><action name="Execute"><command><![CDATA[alacritty -e 'nvim']]></command></action></item>
+    <item label="nitrogen"><action name="Execute"><command><![CDATA[nitrogen]]></command></action></item>
+    <item label="picom"><action name="Execute"><command><![CDATA[picom]]></command></action></item>
+    <item label="Software Token (small)"><action name="Execute"><command><![CDATA[stoken-gui --small]]></command></action></item>
+    <item label="Software Token"><action name="Execute"><command><![CDATA[stoken-gui]]></command></action></item>
+    <item label="Vim"><action name="Execute"><command><![CDATA[alacritty -e 'vim']]></command></action></item>
+  </menu>
+  <menu id="0.917282532758207" label="Development">
+    <item label="CMake"><action name="Execute"><command><![CDATA[cmake-gui]]></command></action></item>
+    <item label="Icon Browser"><action name="Execute"><command><![CDATA[yad-icon-browser]]></command></action></item>
+    <item label="Meld"><action name="Execute"><command><![CDATA[meld]]></command></action></item>
+  </menu>
+  <menu id="0.240606616056663" label="Graphics">
+    <item label="Viewnior"><action name="Execute"><command><![CDATA[viewnior]]></command></action></item>
+    <item label="XSane - Scanning"><action name="Execute"><command><![CDATA[xsane]]></command></action></item>
+  </menu>
+  <menu id="0.663269847721445" label="Multimedia">
+    <item label="mpv Media Player"><action name="Execute"><command><![CDATA[mpv --player-operation-mode=pseudo-gui --]]></command></action></item>
+    <item label="PulseAudio Volume Control"><action name="Execute"><command><![CDATA[pavucontrol]]></command></action></item>
+    <item label="Qt V4L2 test Utility"><action name="Execute"><command><![CDATA[qv4l2]]></command></action></item>
+    <item label="Qt V4L2 video capture utility"><action name="Execute"><command><![CDATA[qvidcap]]></command></action></item>
+  </menu>
+  <menu id="0.339449623495131" label="Network">
+    <item label="Avahi SSH Server Browser"><action name="Execute"><command><![CDATA[/usr/bin/bssh]]></command></action></item>
+    <item label="Avahi VNC Server Browser"><action name="Execute"><command><![CDATA[/usr/bin/bvnc]]></command></action></item>
+    <item label="Brave"><action name="Execute"><command><![CDATA[brave]]></command></action></item>
+    <item label="Discord"><action name="Execute"><command><![CDATA[/usr/bin/perl -e 'chdir($ARGV[0]) && exec($ARGV[1])' \/usr\/bin \/usr\/bin\/discord]]></command></action></item>
+    <item label="Firefox Web Browser"><action name="Execute"><command><![CDATA[/usr/lib/firefox/firefox]]></command></action></item>
+    <item label="LibreWolf"><action name="Execute"><command><![CDATA[/usr/lib/librewolf/librewolf]]></command></action></item>
+  </menu>
+  <menu id="0.0915587218332661" label="Office">
+    <item label="Zathura"><action name="Execute"><command><![CDATA[zathura]]></command></action></item>
+  </menu>
+  <menu id="0.789134221521035" label="Other">
+    <item label="hp-uiscan"><action name="Execute"><command><![CDATA[/usr/bin/hp-uiscan]]></command></action></item>
+    <item label="Image viewer"><action name="Execute"><command><![CDATA[/usr/bin/sxiv -a]]></command></action></item>
+    <item label="Mail"><action name="Execute"><command><![CDATA[/usr/local/bin/st -e neomutt]]></command></action></item>
+    <item label="PDF reader"><action name="Execute"><command><![CDATA[/usr/bin/zathura]]></command></action></item>
+    <item label="Rofi Theme Selector"><action name="Execute"><command><![CDATA[rofi-theme-selector]]></command></action></item>
+    <item label="Rofi"><action name="Execute"><command><![CDATA[rofi -show]]></command></action></item>
+    <item label="RSS feed addition"><action name="Execute"><command><![CDATA[/usr/bin/env rssadd]]></command></action></item>
+    <item label="Text editor"><action name="Execute"><command><![CDATA[/usr/local/bin/st -e nvim]]></command></action></item>
+    <item label="Torrent"><action name="Execute"><command><![CDATA[/usr/bin/env transadd]]></command></action></item>
+  </menu>
+  <menu id="0.269492960343165" label="Settings">
+    <item label="Advanced Network Configuration"><action name="Execute"><command><![CDATA[nm-connection-editor]]></command></action></item>
+    <item label="ARandR"><action name="Execute"><command><![CDATA[arandr]]></command></action></item>
+    <item label="Customize Look and Feel"><action name="Execute"><command><![CDATA[lxappearance]]></command></action></item>
+    <item label="Firewall"><action name="Execute"><command><![CDATA[/usr/bin/firewall-config]]></command></action></item>
+    <item label="Openbox Configuration Manager"><action name="Execute"><command><![CDATA[obconf]]></command></action></item>
+    <item label="Print Settings"><action name="Execute"><command><![CDATA[system-config-printer]]></command></action></item>
+    <item label="PulseAudio Volume Control"><action name="Execute"><command><![CDATA[pavucontrol]]></command></action></item>
+    <item label="YAD settings"><action name="Execute"><command><![CDATA[yad-settings]]></command></action></item>
+  </menu>
+  <menu id="0.360787025644104" label="System">
+    <item label="Alacritty"><action name="Execute"><command><![CDATA[alacritty]]></command></action></item>
+    <item label="Avahi Zeroconf Browser"><action name="Execute"><command><![CDATA[/usr/bin/avahi-discover]]></command></action></item>
+    <item label="Byobu Gnome Terminal"><action name="Execute"><command><![CDATA[gnome-terminal --name=us.kirkland.terminals.byobu --class=us.kirkland.terminals.byobu -- byobu]]></command></action></item>
+    <item label="Configure EOS Update Notifier"><action name="Execute"><command><![CDATA[eos-update-notifier-configure]]></command></action></item>
+    <item label="EndeavourOS apps info"><action name="Execute"><command><![CDATA[eos-apps-info]]></command></action></item>
+    <item label="EndeavourOS log tool"><action name="Execute"><command><![CDATA[/usr/bin/eos-log-tool]]></command></action></item>
+    <item label="EndeavourOS Quickstart Installer"><action name="Execute"><command><![CDATA[eos-quickstart]]></command></action></item>
+    <item label="eos-update"><action name="Execute"><command><![CDATA[alacritty -e 'bash -c "echo '==> eos-update --yay'; eos-update --yay; eos-sleep-counter 60"']]></command></action></item>
+    <item label="Firewall"><action name="Execute"><command><![CDATA[/usr/bin/firewall-config]]></command></action></item>
+    <item label="fish"><action name="Execute"><command><![CDATA[alacritty -e 'fish']]></command></action></item>
+    <item label="Hardware Locality lstopo"><action name="Execute"><command><![CDATA[lstopo]]></command></action></item>
+    <item label="Htop"><action name="Execute"><command><![CDATA[alacritty -e 'htop']]></command></action></item>
+    <item label="Manage Printing"><action name="Execute"><command><![CDATA[xdg-open http://localhost:631/]]></command></action></item>
+    <item label="Print Settings"><action name="Execute"><command><![CDATA[system-config-printer]]></command></action></item>
+    <item label="ranger"><action name="Execute"><command><![CDATA[alacritty -e 'ranger']]></command></action></item>
+    <item label="Reflector Simple"><action name="Execute"><command><![CDATA[/usr/bin/reflector-simple]]></command></action></item>
+    <item label="UXTerm"><action name="Execute"><command><![CDATA[uxterm]]></command></action></item>
+    <item label="Welcome"><action name="Execute"><command><![CDATA[sh /usr/share/endeavouros/scripts/welcome --once]]></command></action></item>
+    <item label="XTerm"><action name="Execute"><command><![CDATA[xterm]]></command></action></item>
+  </menu>
+  <separator/>
+  <menu id="0.116295387561649" label="Openbox">
+  <menu id="0.357268476409256" label="Obmenu-Generator">
+    <item label="Menu Schema"><action name="Execute"><command><![CDATA[geany ~/.config/obmenu-generator/schema.pl]]></command></action></item>
+    <item label="Menu Config"><action name="Execute"><command><![CDATA[geany ~/.config/obmenu-generator/config.pl]]></command></action></item>
+  <separator/>
+    <item label="Generate a static menu"><action name="Execute"><command><![CDATA[obmenu-generator -s -c]]></command></action></item>
+    <item label="Generate a static menu with icons"><action name="Execute"><command><![CDATA[obmenu-generator -s -i -c]]></command></action></item>
+  <separator/>
+    <item label="Generate a dynamic menu"><action name="Execute"><command><![CDATA[obmenu-generator -p]]></command></action></item>
+    <item label="Generate a dynamic menu with icons"><action name="Execute"><command><![CDATA[obmenu-generator -p -i]]></command></action></item>
+  <separator/>
+    <item label="Refresh cache"><action name="Execute"><command><![CDATA[obmenu-generator -d]]></command></action></item>
+  </menu>
+  <menu id="0.232381497965868" label="Openbox">
+    <item label="Openbox Autostart"><action name="Execute"><command><![CDATA[geany ~/.config/openbox/autostart]]></command></action></item>
+    <item label="Openbox RC"><action name="Execute"><command><![CDATA[geany ~/.config/openbox/rc.xml]]></command></action></item>
+    <item label="Openbox Menu"><action name="Execute"><command><![CDATA[geany ~/.config/openbox/menu.xml]]></command></action></item>
+    <item label="Reconfigure Openbox"><action name="Execute"><command><![CDATA[openbox --reconfigure]]></command></action></item>
+  </menu>
+  </menu>
+  <menu id="0.297888092028177" label="Tools">
+  <menu id="0.508948148775531" label="Screenshot">
+    <item label="full"><action name="Execute"><command><![CDATA[~/.config/openbox/scripts/ss -f]]></command></action></item>
+    <item label="select"><action name="Execute"><command><![CDATA[~/.config/openbox/scripts/ss -s]]></command></action></item>
+  </menu>
+  </menu>
+  <separator/>
+    <item label="Lock"><action name="Execute"><command><![CDATA[xscreensaver-command -lock]]></command></action></item>
+    <item label="Exit"><action name="Exit"/></item>
+  </menu>
+</openbox_menu>

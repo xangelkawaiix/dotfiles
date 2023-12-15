@@ -10,11 +10,11 @@
 	background-color: rgba(255,255,255,0.04);
 }
 .xfce4-panel.background .tasklist button { font-size: 12px; }
-.xfce4-panel.background button:active, 
-.xfce4-panel.background button:hover, 
-.xfce4-panel.background button:active:hover, 
+.xfce4-panel.background button:active,
+.xfce4-panel.background button:hover,
+.xfce4-panel.background button:active:hover,
 .xfce4-panel.background .tasklist button:active,
-.xfce4-panel.background .tasklist button:hover, 
+.xfce4-panel.background .tasklist button:hover,
 .xfce4-panel.background .tasklist button:active:hover { background-color: rgba(255,255,255,0.03); }
 .xfce4-panel button:checked
 {
@@ -133,3 +133,4 @@ calendar
 	border-radius: 5px;
 	font-size: 14px;
 }
+

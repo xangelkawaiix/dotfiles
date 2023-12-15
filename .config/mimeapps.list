@@ -6,6 +6,10 @@ text/plain=text.desktop;
 application/postscript=pdf.desktop;
 application/pdf=pdf.desktop;
 image/png=img.desktop;
-image/jpeg=img.desktop;
+image/jpeg=nsxiv.desktop
 image/gif=img.desktop;
 application/rss+xml=rss.desktop
+
+[Added Associations]
+image/png=nsxiv.desktop;
+image/jpeg=nsxiv.desktop;

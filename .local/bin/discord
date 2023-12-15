@@ -1,6 +1,0 @@
-#!/bin/sh
-
-disdir="${XDG_CACHE_HOME:-$HOME/.cache}/discord" 
-[ ! -d "$disdir" ] && mkdir -p "$disdir"  
-
-$BROWSER --user-data-dir="$disdir" --kiosk https://canary.discord.com/app "$@" >/dev/null 2>&1 &
