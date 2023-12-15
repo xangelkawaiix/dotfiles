@@ -56,7 +56,7 @@ Dependencies: `brightnessctl pulsemixer alacritty newsboat rofi lemonbar oh-my-z
 [ZSH theme uses typewritten](https://github.com/reobin/typewritten). And the font for terminal is azukifontBI
 
 
-###[Side note]
+### [Side note]
 
 
 - Wallpaper by [noeru](https://www.pixiv.net/en/users/5553811) is pretty for pastel theme.
